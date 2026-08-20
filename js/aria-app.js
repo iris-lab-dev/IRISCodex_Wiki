@@ -1,5 +1,5 @@
 import { ariaPage } from './data.js';
-import { affiliationCard, profileCard, sidebar, tableOfContents, wikiHeader, wikiSection } from './components.js';
+import { affiliationCard, profileCard, sidebar, siteFooter, tableOfContents, wikiHeader, wikiSection } from './components.js';
 
 const app = document.querySelector('#app');
 const { brand, affiliation, profile, toc, sections, recent } = ariaPage;
@@ -15,7 +15,8 @@ app.innerHTML = `
       <div class="content-grid"><div class="toc-column">${tableOfContents({ toc })}</div><div class="article-column">${profileCard({ profile })}${sections.map((section, index) => wikiSection({ section, index: index + 1 })).join('')}</div></div>
     </article>
     ${sidebar({ recent })}
-  </main>`;
+  </main>
+  ${siteFooter()}`;
 
 document.querySelector('.search-form').addEventListener('submit', (event) => {
   event.preventDefault();

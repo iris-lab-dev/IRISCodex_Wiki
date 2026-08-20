@@ -112,3 +112,15 @@ time { flex: none; color: #89949a; font-size: 10px; }
 .data-table th { background: #e4e4e6; color: #505157; white-space: nowrap; }
 @media (max-width: 820px) { .content-grid { grid-template-columns: 1fr; } .toc { position: static; } .profile-card { float: none; width: min(100%, 290px); margin: 0 auto 22px; } }
 @media (max-width: 520px) { .affiliation-card { padding: 14px; } .affiliation-links { grid-template-columns: repeat(2, 1fr); } }
+
+.container { width: min(calc(100% - 36px), 1364px); margin: 0 auto; }
+footer { margin-top: 24px; padding: 30px 0 34px; border-top: 1px solid #c9c9ce; background: #e6e6e9; color: #686970; font-size: 11px; }
+.footer-policy, .footer-publisher, .footer-info { display: flex; flex-wrap: wrap; gap: 4px 0; }
+.footer-policy { margin-bottom: 10px; color: #38393f; }
+.footer-publisher { margin-bottom: 10px; color: #505157; }
+.footer-policy strong { color: #303136; }
+.footer-policy span, .footer-policy strong, .footer-publisher span, .footer-info span { white-space: nowrap; }
+.footer-policy i { margin: 0 8px; color: #9a9aa0; font-style: normal; }
+.footer-publisher span:not(:last-child)::after, .footer-info span:not(:last-child)::after { margin: 0 6px; color: #9a9aa0; content: "|"; }
+.footer-info a { color: inherit; font-weight: 700; }
+@media (max-width: 520px) { footer { margin-top: 10px; padding: 22px 0 26px; } .container { width: min(calc(100% - 20px), 1364px); } .footer-policy i { margin: 0 5px; } .footer-info span:not(:last-child)::after { margin: 0 4px; } }

@@ -1,5 +1,5 @@
 import { homePage } from './data.js';
-import { guideList, popularTable, sidebar, wikiHeader } from './components.js';
+import { guideList, popularTable, sidebar, siteFooter, wikiHeader } from './components.js';
 
 const app = document.querySelector('#app');
 const { brand, updatedAt, intro, guides, popular, recent } = homePage;
@@ -16,7 +16,8 @@ app.innerHTML = `
       ${popularTable({ popular })}
     </article>
     ${sidebar({ recent })}
-  </main>`;
+  </main>
+  ${siteFooter()}`;
 
 document.querySelector('.search-form').addEventListener('submit', (event) => {
   event.preventDefault();
