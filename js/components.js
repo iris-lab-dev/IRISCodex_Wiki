@@ -3,7 +3,7 @@ const documentPath = (title) => `/c/${encodeURIComponent(title)}/`;
 const homePath = documentPath('아이리스도감:대문');
 
 export const siteFooter = () => `
-  <footer><div class="container"><div class="footer-policy"><span>이용약관</span><i aria-hidden="true">|</i><strong>개인정보처리방침</strong><i aria-hidden="true">|</i><span>청소년보호정책</span></div><div class="footer-publisher"><span>아이리스TV (IRIS TV)</span><span>등록번호 : 경남,아02750</span><span>발행인 · 편집인 · 청소년보호책임자 : 이종우</span><span>발행소 : 경상남도 양산시 하북면 지곡1길 8, 1동 406호</span><span>전화: 070-8970-6780</span><span>이메일: jebo@iristv.kr</span></div><div class="footer-info"><span><a href="https://irislab.co.kr">주식회사 아이리스랩</a></span><span>대표 : 이종우</span><span>사업자등록번호: 723-88-03656</span><span>주소 : 경상남도 양산시 하북면 지곡1길 8 1동 406호</span><span>이메일 : contact@irislab.co.kr</span><span>연락처 : 070-8970-6780</span><span>호스팅 서비스 제공 : Github, Inc.</span></div></div></footer>`;
+  <footer><div class="container"><div class="footer-policy"><span>이용약관</span><i aria-hidden="true">|</i><strong>개인정보처리방침</strong><i aria-hidden="true">|</i><span>청소년보호정책</span></div><div class="footer-publisher"><span>아이리스TV (IRIS TV)</span><span>발행인 · 편집인 · 청소년보호책임자 : 이종우</span><span>등록번호 : 경남,아02750</span><span>발행소 : 경상남도 양산시 하북면 지곡1길 8, 1동 406호</span><span>전화: 070-8970-6780</span><span>이메일: jebo@iristv.kr</span></div><div class="footer-info"><span><a href="https://irislab.co.kr">주식회사 아이리스랩</a></span><span>대표 : 이종우</span><span>사업자등록번호: 723-88-03656</span><span>주소 : 경상남도 양산시 하북면 지곡1길 8 1동 406호</span><span>이메일 : contact@irislab.co.kr</span><span>연락처 : 070-8970-6780</span><span>호스팅 서비스 제공 : Github, Inc.</span></div></div></footer>`;
 
 export const wikiHeader = ({ brand }) => `
   <header class="site-header">
