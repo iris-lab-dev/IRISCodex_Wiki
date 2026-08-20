@@ -1,18 +1,19 @@
-import { wikiPage } from './data.js';
-import { affiliationCard, profileCard, sidebar, tableOfContents, wikiHeader, wikiSection } from './components.js';
+import { homePage } from './data.js';
+import { guideList, popularTable, sidebar, wikiHeader } from './components.js';
 
 const app = document.querySelector('#app');
-const { brand, affiliation, profile, toc, sections, recent } = wikiPage;
+const { brand, updatedAt, intro, guides, popular, recent } = homePage;
 
 document.documentElement.style.setProperty('--brand', brand.accent);
 app.innerHTML = `
   ${wikiHeader({ brand })}
   <main class="page-shell">
-    <article class="wiki-document">
-      <div class="document-heading" id="overview"><span class="eyebrow">IRISTV / CREATOR</span><h1>${profile.name}</h1><p>최근 수정 시각: 2026-08-19 16:20:00</p></div>
-      <div class="document-tools"><span>분류: <a href="#related">IRISTV</a> | <a href="#related">IRISTV 소속 크리에이터</a></span><div><button type="button">☆</button><button type="button">편집</button><button type="button">토론</button></div></div>
-      ${affiliationCard({ affiliation })}
-      <div class="content-grid"><div class="toc-column">${tableOfContents({ toc })}</div><div class="article-column">${profileCard({ profile })}${sections.map((section, index) => wikiSection({ section, index: index + 1 })).join('')}</div></div>
+    <article class="wiki-document" id="overview">
+      <header class="document-heading"><h1>아이리스도감:대문</h1><p>최근 수정 시각: ${updatedAt}</p></header>
+      <div class="document-tools"><span>분류: <a href="#popular">아이리스도감</a></span><div><button type="button">☆</button><button type="button">편집</button><button type="button">토론</button><button type="button" aria-label="더 보기">⋮</button></div></div>
+      <section class="welcome"><h2>${intro.title} <em>${intro.emphasis}</em></h2><strong>아이리스도감에 오신 것을 환영합니다!</strong>${intro.description.map((paragraph) => `<p>${paragraph}</p>`).join('')}</section>
+      ${guideList({ guides })}
+      ${popularTable({ popular })}
     </article>
     ${sidebar({ recent })}
   </main>`;
@@ -23,10 +24,4 @@ document.querySelector('.search-form').addEventListener('submit', (event) => {
   input.setCustomValidity(input.value ? '샘플 화면에서는 검색 기능을 제공하지 않습니다.' : '검색어를 입력해 주세요.');
   input.reportValidity();
   input.setCustomValidity('');
-});
-
-document.querySelector('.toc-toggle').addEventListener('click', (event) => {
-  const tocElement = event.currentTarget.closest('.toc');
-  const isOpen = tocElement.classList.toggle('is-open');
-  event.currentTarget.setAttribute('aria-expanded', String(isOpen));
 });
